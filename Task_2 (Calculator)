@@ -128,11 +128,20 @@ elif func == a[3] or func == a[17] or func == a[18] or func == a[19]:
 elif func == a[4] or func == a[20] or func == a[21] or func == a[22]:
     print('Введите число:')
     num = input()
-    num = int(digit_check(num))
+    num1 = num.replace('-', '').replace('.', '').replace(',', '')
+    while num1.isdigit() != True and is_negative(num1) != True:
+        print('Введёный элемент не является числом, введите первый элемент:')
+        num = input()
+        num1 = num.replace('-', '').replace('.', '').replace(',', '')
     print('Введите степень:')
     n = input()
-    n = int(digit_check(n))
-    print('Результат:', int(pow(num, n)))
+    while num1.isdigit() != True and is_negative(num1) != True:
+        print('Введёный элемент не является числом, введите первый элемент:')
+        n = input()
+        n1 = num.replace('-', '').replace('.', '').replace(',', '')
+    num = float(num)
+    n = float(n)
+    print('Результат:', num**n)
 # логарифм
 elif func == a[5] or func == a[23] or func == a[24] or func == a[25]:
     print('Введите основание:')
